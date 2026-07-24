@@ -4,6 +4,7 @@ import 'package:ecommerce/custom_Widget/text_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'login.dart';
+import 'otp_screen.dart';
 
 class ForgetScreen extends StatefulWidget {
   const ForgetScreen({super.key});
@@ -149,6 +150,9 @@ class _ForgetScreenState extends State<ForgetScreen> {
           ),
 
           InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => OtpScreen()));
+            },
             child: Card(
               margin: EdgeInsets.all(7),
               color: Colors.orangeAccent,

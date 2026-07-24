@@ -1,7 +1,7 @@
 import 'package:ecommerce/custom_Widget/button.dart';
 import 'package:ecommerce/custom_Widget/text_field.dart';
 import 'package:ecommerce/custom_Widget/text_widget.dart';
-import 'package:ecommerce/reg_screen.dart';
+import 'package:ecommerce/screen/reg_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'fpass_screen.dart';
