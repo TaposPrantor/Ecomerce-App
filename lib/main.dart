@@ -1,4 +1,5 @@
 
+import 'package:ecommerce/reg_screen.dart';
 import 'package:ecommerce/splash.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: SplashScreen(),
     );
   }
 }
