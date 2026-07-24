@@ -1,6 +1,7 @@
 import 'package:ecommerce/custom_Widget/button.dart';
 import 'package:ecommerce/custom_Widget/text_field.dart';
 import 'package:ecommerce/custom_Widget/text_widget.dart';
+import 'package:ecommerce/screen/reset_password.dart';
 import 'package:flutter/material.dart';
 
 import 'login.dart';
@@ -123,6 +124,12 @@ class _OtpScreenState extends State<OtpScreen> {
           ),
           SizedBox(height: 20),
           InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ResetPassword()),
+              );
+            },
             child: Card(
               margin: EdgeInsets.all(7),
               color: Colors.orangeAccent,
