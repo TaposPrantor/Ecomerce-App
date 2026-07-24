@@ -4,6 +4,8 @@ import 'package:ecommerce/custom_Widget/text_widget.dart';
 import 'package:ecommerce/reg_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'fpass_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -118,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 InkWell(
                   onTap: () {
-                    //Navigator.push(context, MaterialPageRoute(builder: (context) => FrgotScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetScreen()));
                   },
                   child: Text(
                     "Forgot Password?",
