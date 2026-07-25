@@ -1,7 +1,7 @@
 import 'package:ecommerce/custom_Widget/button.dart';
 import 'package:ecommerce/custom_Widget/text_field.dart';
 import 'package:ecommerce/custom_Widget/text_widget.dart';
-import 'package:ecommerce/screen/reg_screen.dart';
+import 'package:ecommerce/screen/default/reg_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'fpass_screen.dart';
@@ -16,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController phone = TextEditingController();
   TextEditingController password = TextEditingController();
+  TextEditingController email = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ],
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: 15),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 12),
             child: MyTextWidget(
@@ -92,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
               tColor: Colors.black,
             ),
           ),
-          SizedBox(height: 5,),
+          SizedBox(height: 5),
           MyTextField(
             controller: phone,
             hint: "Enter Phone Number",
@@ -113,14 +114,17 @@ class _LoginScreenState extends State<LoginScreen> {
             suffixIcon: Icons.visibility_off,
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 5),
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               spacing: 15,
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetScreen()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgetScreen()),
+                    );
                   },
                   child: Text(
                     "Forgot Password?",
@@ -131,6 +135,61 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           InkWell(
+            onTap: () {
+              if (email.text == "trp@gmail.com" && password.text == "1234594") {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Row(
+                      children: const [
+                        Icon(Icons.check_circle, color: Colors.white),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: Text(
+                            "Login Successfully",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                      ],
+                    ),
+                    backgroundColor: Colors.green,
+                    behavior: SnackBarBehavior.floating,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    margin: const EdgeInsets.all(15),
+                    elevation: 8,
+                    duration: const Duration(seconds: 3),
+                    action: SnackBarAction(
+                      label: "OK",
+                      textColor: Colors.yellow,
+                      onPressed: () {},
+                    ),
+                  ),
+                );
+
+                // চাইলে এখানে অন্য page এ যাবেন
+                // Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Row(
+                      children: const [
+                        Icon(Icons.error_outline, color: Colors.white),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: Text(
+                            "Wrong Email or Password",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                      ],
+                    ),
+                    backgroundColor: Colors.red,
+                    behavior: SnackBarBehavior.floating,
+                  ),
+                );
+              }
+            },
             child: Card(
               margin: EdgeInsets.all(7),
               color: Colors.deepOrangeAccent,
@@ -152,7 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          SizedBox(height: 25,),
+          SizedBox(height: 25),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 8),
             child: Row(
@@ -171,7 +230,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
-          SizedBox(height: 25,),
+          SizedBox(height: 25),
           Row(
             children: [
               SizedBox(
@@ -190,15 +249,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         Padding(
-                            padding: EdgeInsets.all(5),
+                          padding: EdgeInsets.all(5),
                           child: Text(
-                              "Facebook",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20
-                            ),
+                            "Facebook",
+                            style: TextStyle(color: Colors.black, fontSize: 20),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -223,12 +279,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           padding: EdgeInsets.all(5),
                           child: Text(
                             "Google",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20
-                            ),
+                            style: TextStyle(color: Colors.black, fontSize: 20),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -236,18 +289,24 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ],
           ),
-          SizedBox(height: 35,),
+          SizedBox(height: 35),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 15,
             children: [
               Text("Don't have an account?"),
               InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => RegScreen()));
-                  },
-                  child: Text("Register Now", style: TextStyle(color:Colors.blue),)
-              )
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegScreen()),
+                  );
+                },
+                child: Text(
+                  "Register Now",
+                  style: TextStyle(color: Colors.blue),
+                ),
+              ),
             ],
           ),
         ],
