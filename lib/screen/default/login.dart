@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           SizedBox(height: 5),
           MyTextField(
-            controller: phone,
+            controller: email,
             hint: "Enter Phone Number",
             prefixIcon: Icons.phone,
           ),
@@ -110,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
           MyTextField(
             controller: password,
             hint: "Enter Password",
-            prefixIcon: Icons.phone,
+            prefixIcon: Icons.password,
             suffixIcon: Icons.visibility_off,
           ),
           Container(
