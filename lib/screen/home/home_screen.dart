@@ -2,6 +2,8 @@
 import 'package:ecommerce/custom_Widget/text.dart';
 import 'package:flutter/material.dart';
 
+import '../../custom_Widget/search_bar.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -33,6 +35,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(width: 30,)
         ],
+      ),
+
+      body: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Column(
+          children: [
+            SearchWidget (),
+
+          ],
+        ),
       ),
     );
   }
