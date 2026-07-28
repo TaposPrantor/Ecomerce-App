@@ -1,7 +1,5 @@
-
 import 'package:ecommerce/custom_Widget/text.dart';
 import 'package:flutter/material.dart';
-
 import '../../custom_Widget/search_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: Drawer(),
       appBar: AppBar(
         centerTitle: true,
+        toolbarHeight: 30,
         title: Row(
           mainAxisSize: MainAxisSize.min,
           spacing: 10,
@@ -35,17 +34,20 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(width: 30,)
         ],
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(60),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SearchWidget(),
+          ),
+        ),
       ),
 
       body: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Column(
           children: [
-            SizedBox(
-              height: 30,
-                width: double.infinity,
-                child: SearchWidget ()
-            ),
+
           ],
         ),
       ),
