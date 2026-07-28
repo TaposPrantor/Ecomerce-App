@@ -11,6 +11,7 @@ class SearchWidget extends StatelessWidget {
         contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
         labelText: "Search for Products",
         suffixIcon: Icon(Icons.search),
+        filled: true,
         fillColor: Colors.white,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5,),

@@ -41,8 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.all(4.0),
         child: Column(
           children: [
-            SearchWidget (),
-
+            SizedBox(
+              height: 30,
+                width: double.infinity,
+                child: SearchWidget ()
+            ),
           ],
         ),
       ),
