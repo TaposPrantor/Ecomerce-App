@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         toolbarHeight: 30,
+        backgroundColor: Colors.orange.shade50,
         title: Row(
           mainAxisSize: MainAxisSize.min,
           spacing: 10,
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(4.0),
+        padding: const EdgeInsets.symmetric(),
         child: Column(
           children: [
 
