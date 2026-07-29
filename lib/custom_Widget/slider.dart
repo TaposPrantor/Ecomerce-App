@@ -21,16 +21,35 @@ class CustomSlider extends StatelessWidget {
             return Container(
                 width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.symmetric(horizontal: 5.0),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    color: Colors.amber,
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                      image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDV7Yr5l5YSElvPYUlA2GGc3DYFI7C2UQpkmSQv_f09h1wceW4vU7f3zU&s=10")
+              child: Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.network(
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDV7Yr5l5YSElvPYUlA2GGc3DYFI7C2UQpkmSQv_f09h1wceW4vU7f3zU&s=10",
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Positioned(
+                    left: 20,
+                      bottom: 20,
+                      child: ElevatedButton(
+                          onPressed: () {}, 
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)
+                          )
+                        ),
+                          child: Text("Shop Now"),
+                      )
                   )
-                ),
-                child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+                ],
+              ),
+
             );
           },
         );
