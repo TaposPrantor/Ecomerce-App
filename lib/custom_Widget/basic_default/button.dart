@@ -1,4 +1,4 @@
-import 'package:ecommerce/custom_Widget/text_widget.dart';
+import 'package:ecommerce/custom_Widget/basic_default/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {

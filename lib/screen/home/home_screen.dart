@@ -1,9 +1,11 @@
 import 'package:ecommerce/custom_Widget/text.dart';
 import 'package:flutter/material.dart';
+import '../../custom_Widget/title_heading.dart';
 import '../../custom_Widget/search_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import '../../custom_Widget/slider.dart';
+import '../../utilities/colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -63,15 +65,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
       body: Padding(
         padding: const EdgeInsets.symmetric(),
-        child: Column(
-          spacing: 8,
-            children: [
-              CustomSlider()
-            ]
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            spacing: 8,
+              children: [
+                CustomSlider(),
+                TitleHeading(text: "Categories", onTap: () {},),
+              ]
+          ),
         ),
       ),
     );
   }
 }
+
+
 
 

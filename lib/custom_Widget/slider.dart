@@ -38,7 +38,7 @@ class CustomSlider extends StatelessWidget {
                       child: ElevatedButton(
                           onPressed: () {}, 
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
+                          backgroundColor: Colors.blue,
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)
