@@ -1,4 +1,5 @@
 import 'package:ecommerce/custom_Widget/text.dart';
+import 'package:ecommerce/screen/home/widget/category_widget.dart';
 import 'package:flutter/material.dart';
 import '../../custom_Widget/title_heading.dart';
 import '../../custom_Widget/search_bar.dart';
@@ -72,6 +73,19 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 CustomSlider(),
                 TitleHeading(text: "Categories", onTap: () {},),
+                SizedBox(
+                  height: 120,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                      itemCount: 7,
+                      itemBuilder: (context, i)=>Category_Widget(),
+                  ),
+                ),
+
+
+                TitleHeading(text: "Features Products", onTap: () {},),
+                TitleHeading(text: "New Arrivals", onTap: () {},),
               ]
           ),
         ),
