@@ -9,6 +9,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import '../../custom_Widget/slider.dart';
 import '../../utilities/colors.dart';
+import '../all_product/all_product.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -67,26 +68,51 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             CustomSlider(),
             SizedBox(height: 12,),
-            TitleHeading(text: "Categories", onTap: () {}),
+            TitleHeading(
+                text: "Categories",
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AllProduct()));
+                }
+            ),
             SizedBox(height: 12,),
             categories(),
             SizedBox(height: 12,),
-            TitleHeading(text: "Features Products", onTap: () {}),
+            TitleHeading(
+                text: "Features Products",
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AllProduct()));
+                }
+            ),
             SizedBox(height: 12,),
             Featured(),
             SizedBox(height: 12,),
-            TitleHeading(text: "New Arrivals", onTap: () {}),
+            TitleHeading(
+                text: "New Arrivals",
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AllProduct()));
+                }
+            ),
             SizedBox(height: 12,),
             NewArrival(),
             SizedBox(height: 12,),
 
-            TitleHeading(text: "Best Seller Products", onTap: () {}),
+            TitleHeading(
+                text: "Best Seller Products",
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AllProduct()));
+                }
+            ),
             SizedBox(height: 12,),
 
             Trending(),
 
             SizedBox(height: 12,),
-            TitleHeading(text: "Top Trending Products", onTap: () {}),
+            TitleHeading(
+                text: "Top Trending Products",
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AllProduct()));
+                }
+            ),
             SizedBox(height: 12,),
 
             Trending(),
