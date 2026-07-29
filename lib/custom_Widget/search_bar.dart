@@ -23,7 +23,7 @@ class SearchWidget extends StatelessWidget {
         ),
         errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5,),
-            borderSide: BorderSide(color: Colors.green)
+            borderSide: BorderSide(color: Colors.red)
         ),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5,),
