@@ -21,8 +21,14 @@ class CustomSlider extends StatelessWidget {
             return Container(
                 width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.symmetric(horizontal: 5.0),
+                alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    color: Colors.amber
+                    color: Colors.amber,
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                      image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDV7Yr5l5YSElvPYUlA2GGc3DYFI7C2UQpkmSQv_f09h1wceW4vU7f3zU&s=10")
+                  )
                 ),
                 child: Text('text $i', style: TextStyle(fontSize: 16.0),)
             );
