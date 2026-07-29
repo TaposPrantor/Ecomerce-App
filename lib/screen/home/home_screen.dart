@@ -2,6 +2,7 @@ import 'package:ecommerce/custom_Widget/text.dart';
 import 'package:ecommerce/screen/home/widget/category_widget.dart';
 import 'package:ecommerce/screen/home/widget/featured_card.dart';
 import 'package:flutter/material.dart';
+import '../../custom_Widget/custom_cart.dart';
 import '../../custom_Widget/title_heading.dart';
 import '../../custom_Widget/search_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -48,12 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         actions: [
-          Badge(
-            label: Text("3"),
-            textColor: Colors.white,
-            backgroundColor: Colors.deepOrange,
-            child: Icon(Icons.shopping_cart_outlined),
-          ),
+          CustomCart(),
           SizedBox(width: 30),
         ],
         bottom: PreferredSize(
@@ -77,35 +73,80 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 12,),
             TitleHeading(text: "Features Products", onTap: () {}),
             SizedBox(height: 12,),
-            SizedBox(
-              height: 180,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                shrinkWrap: true,
-                itemBuilder: (context, i) =>
-                    Featured_Card(
-                      isShowDiscount: true,
-                    ),
-              ),
-            ),
+            Featured(),
             SizedBox(height: 12,),
             TitleHeading(text: "New Arrivals", onTap: () {}),
             SizedBox(height: 12,),
-            SizedBox(
-              height: 160,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                shrinkWrap: true,
-                itemBuilder: (context, i) => Featured_Card(),
-              ),
-            ),
+            NewArrival(),
+            SizedBox(height: 12,),
 
+            TitleHeading(text: "Best Seller Products", onTap: () {}),
+            SizedBox(height: 12,),
+
+            Trending(),
+
+            SizedBox(height: 12,),
+            TitleHeading(text: "Top Trending Products", onTap: () {}),
+            SizedBox(height: 12,),
+
+            Trending(),
+
+            SizedBox(height: 12,),
           ],
         ),
       ),
     );
+  }
+
+  SizedBox Trending() {
+    return SizedBox(
+            height: 120,
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: 10,
+              itemBuilder: (context, i) => Container(
+                height: 100,
+                width: 120,
+                margin: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  //color: Colors.red,
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: NetworkImage("https://newworld.co.za/cdn/shop/files/a5.webp?v=1750595591"),
+                    )
+                ),
+              ),
+            ),
+          );
+  }
+
+  SizedBox NewArrival() {
+    return SizedBox(
+            height: 160,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 10,
+              shrinkWrap: true,
+              itemBuilder: (context, i) => Featured_Card(),
+            ),
+          );
+  }
+
+  SizedBox Featured() {
+    return SizedBox(
+            height: 180,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 10,
+              shrinkWrap: true,
+              itemBuilder: (context, i) =>
+                  Featured_Card(
+                    isShowDiscount: true,
+                  ),
+            ),
+          );
   }
 
   SizedBox categories() {
@@ -120,5 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
 
 
