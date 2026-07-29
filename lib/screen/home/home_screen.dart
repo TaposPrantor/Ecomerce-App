@@ -1,5 +1,6 @@
 import 'package:ecommerce/custom_Widget/text.dart';
 import 'package:ecommerce/screen/home/widget/category_widget.dart';
+import 'package:ecommerce/screen/home/widget/featured_card.dart';
 import 'package:flutter/material.dart';
 import '../../custom_Widget/title_heading.dart';
 import '../../custom_Widget/search_bar.dart';
@@ -65,35 +66,59 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.symmetric(),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            spacing: 8,
-              children: [
-                CustomSlider(),
-                TitleHeading(text: "Categories", onTap: () {},),
-                SizedBox(
-                  height: 120,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                      itemCount: 7,
-                      itemBuilder: (context, i)=>Category_Widget(),
-                  ),
-                ),
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: [
+            CustomSlider(),
+            SizedBox(height: 12,),
+            TitleHeading(text: "Categories", onTap: () {}),
+            SizedBox(height: 12,),
+            categories(),
+            SizedBox(height: 12,),
+            TitleHeading(text: "Features Products", onTap: () {}),
+            SizedBox(height: 12,),
+            SizedBox(
+              height: 180,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                shrinkWrap: true,
+                itemBuilder: (context, i) =>
+                    Featured_Card(
+                      isShowDiscount: true,
+                    ),
+              ),
+            ),
+            SizedBox(height: 12,),
+            TitleHeading(text: "New Arrivals", onTap: () {}),
+            SizedBox(height: 12,),
+            SizedBox(
+              height: 160,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                shrinkWrap: true,
+                itemBuilder: (context, i) => Featured_Card(),
+              ),
+            ),
 
-
-                TitleHeading(text: "Features Products", onTap: () {},),
-                TitleHeading(text: "New Arrivals", onTap: () {},),
-              ]
-          ),
+          ],
         ),
       ),
     );
   }
+
+  SizedBox categories() {
+    return SizedBox(
+      height: 120,
+      child: ListView.builder(
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, i) => Category_Widget(),
+      ),
+    );
+  }
 }
-
-
 
 
