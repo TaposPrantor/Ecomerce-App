@@ -1,5 +1,6 @@
 import 'package:ecommerce/custom_Widget/custom_cart.dart';
 import 'package:ecommerce/custom_Widget/text.dart';
+import 'package:ecommerce/screen/all_product/widget_ap/filter_section.dart';
 import 'package:flutter/material.dart';
 
 class AllProduct extends StatefulWidget {
@@ -25,34 +26,11 @@ class _AllProductState extends State<AllProduct> {
       body: ListView(
         padding: EdgeInsets.all(10),
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                spacing: 8,
-                children: [
-                  Icon(Icons.tune, size: 16,),
-                  CustomText(text: "Filter", fWeight: FontWeight.bold,fSize: 14,)
-                ],
-              ),
-              Row(
-                spacing: 8,
-                children: [
-                  CustomText(text: "Sort By", fWeight: FontWeight.bold,fSize: 14,),
-                  Icon(Icons.arrow_circle_down, size: 16,),
-                ],
-              ),
-              Row(
-                spacing: 8,
-                children: [
-                  Icon(Icons.grid_view, size: 16,),
-                  CustomText(text: "Grid", fWeight: FontWeight.bold,fSize: 14,)
-                ],
-              ),
-            ],
-          )
+          FilterSection()
         ],
       ),
     );
   }
 }
+
+
