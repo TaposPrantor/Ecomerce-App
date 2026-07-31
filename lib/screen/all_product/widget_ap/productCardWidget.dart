@@ -13,16 +13,26 @@ class ProductCardWidget extends StatelessWidget {
     return Card(
       child: Column(
         children: [
-          Container(
-            height: 180,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
-                image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage("https://newworld.co.za/cdn/shop/files/a5.webp?v=1750595591")
-                )
-            ),
+          Stack(
+            alignment: AlignmentGeometry.topRight,
+            children: [
+              Container(
+                height: 180,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: NetworkImage("https://newworld.co.za/cdn/shop/files/a5.webp?v=1750595591")
+                    )
+                ),
+              ),
+              Positioned(
+                top: 5,
+                  right: 5,
+                  child: Icon(Icons.favorite_border_outlined)
+              )
+            ],
           ),
           Column(
             children: [
