@@ -3,7 +3,10 @@ import 'package:ecommerce/custom_Widget/basic_default/button.dart';
 import 'package:ecommerce/custom_Widget/custom_cart.dart';
 import 'package:ecommerce/custom_Widget/text.dart';
 import 'package:ecommerce/screen/details/widget/imageSlider.dart';
+import 'package:ecommerce/utilities/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../custom_Widget/custom_button.dart';
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails({super.key});
@@ -26,24 +29,38 @@ class _ProductDetailsState extends State<ProductDetails> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: "Cannon DSLR Camera Hex45 v2.0", fWeight: FontWeight.bold,fSize: 18,),
-                  Icon(Icons.share, color: Colors.black54,)
+                  CustomText(
+                    text: "Cannon DSLR Camera Hex45 v2.0",
+                    fWeight: FontWeight.bold,
+                    fSize: 18,
+                  ),
+                  Icon(Icons.share, color: Colors.black54),
                 ],
               ),
               Row(
                 spacing: 5,
                 children: [
-                  Icon(Icons.star, color: Colors.orange,size: 16,),
-                  CustomText(text: "4.5", color: Colors.orange,fSize: 15,),
-                  CustomText(text: "(329 Reviews)")
+                  Icon(Icons.star, color: Colors.orange, size: 16),
+                  CustomText(text: "4.5", color: Colors.orange, fSize: 15),
+                  CustomText(text: "(329 Reviews)"),
                 ],
               ),
               Row(
                 spacing: 25,
                 children: [
-                  CustomText(text: "৳42,499",fSize: 19,fWeight: FontWeight.bold,),
-                  CustomText(text: "৳49,499",color: Colors.grey,fSize: 12,fWeight: FontWeight.bold,tDeco: TextDecoration.lineThrough,),
-                  CustomText(text: "-40%", color: Colors.orange,fSize: 15,),
+                  CustomText(
+                    text: "৳42,499",
+                    fSize: 19,
+                    fWeight: FontWeight.bold,
+                  ),
+                  CustomText(
+                    text: "৳49,499",
+                    color: Colors.grey,
+                    fSize: 12,
+                    fWeight: FontWeight.bold,
+                    tDeco: TextDecoration.lineThrough,
+                  ),
+                  CustomText(text: "-40%", color: Colors.orange, fSize: 15),
                 ],
               ),
               Divider(),
@@ -52,14 +69,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                   Row(
                     children: [
                       Icon(Icons.graphic_eq),
-                      CustomText(text: "Super Extra Base")
+                      CustomText(text: "Super Extra Base"),
                     ],
                   ),
-                  SizedBox(width: 120,),
+                  SizedBox(width: 120),
                   Row(
                     children: [
                       Icon(Icons.schedule),
-                      CustomText(text: "Super Extra Base")
+                      CustomText(text: "Super Extra Base"),
                     ],
                   ),
                 ],
@@ -69,52 +86,44 @@ class _ProductDetailsState extends State<ProductDetails> {
                   Row(
                     children: [
                       Icon(Icons.headphones),
-                      CustomText(text: "Soft Padded Ear Cushions")
+                      CustomText(text: "Soft Padded Ear Cushions"),
                     ],
                   ),
-                  SizedBox(width: 70,),
+                  SizedBox(width: 70),
                   Row(
                     children: [
                       Icon(Icons.verified_user),
-                      CustomText(text: "1 Year Warranty")
+                      CustomText(text: "1 Year Warranty"),
                     ],
                   ),
                 ],
               ),
               Divider(),
-              Row(
-                children: [CustomText(text: "Description")],
-              ),
+              Row(children: [CustomText(text: "Description")]),
               Row(
                 children: [
                   Expanded(
-                    child: CustomText(text: "Enjoy powerful sound and deep base with Cannon Camera 450pro\n "
-                        "Enjoy powerful sound and deep base with Cannon Headphone\n"
-                        "Enjoy powerful sound and deep base with Cannon ",
+                    child: CustomText(
+                      text:
+                          "Enjoy powerful sound and deep base with Cannon Camera 450pro\n "
+                          "Enjoy powerful sound and deep base with Cannon Headphone\n"
+                          "Enjoy powerful sound and deep base with Cannon ",
                       mxLine: 3,
-                        ),
-                  )],
+                    ),
+                  ),
+                ],
               ),
               Column(
                 children: [
                   Row(
                     children: [
-                      Expanded(
-                        flex: 2,
-                        child: CustomText(text: "Brand"),
-                      ),
-                      Expanded(
-                        flex: 4,
-                        child: CustomText(text: ": Canon"),
-                      ),
+                      Expanded(flex: 2, child: CustomText(text: "Brand")),
+                      Expanded(flex: 4, child: CustomText(text: ": Canon")),
                     ],
                   ),
                   Row(
                     children: [
-                      Expanded(
-                        flex: 2,
-                        child: CustomText(text: "Model"),
-                      ),
+                      Expanded(flex: 2, child: CustomText(text: "Model")),
                       Expanded(
                         flex: 4,
                         child: CustomText(text: ": Probook 450 G4"),
@@ -147,28 +156,25 @@ class _ProductDetailsState extends State<ProductDetails> {
                   ),
                   Row(
                     children: [
-                      Expanded(
-                        flex: 2,
-                        child: CustomText(text: "Warranty"),
-                      ),
-                      Expanded(
-                        flex: 4,
-                        child: CustomText(text: ": 1 Year"),
-                      ),
+                      Expanded(flex: 2, child: CustomText(text: "Warranty")),
+                      Expanded(flex: 4, child: CustomText(text: ": 1 Year")),
                     ],
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  MyButton(bName: "Add Order", onTap: () {}, bWidth: 50,),
-                  MyButton(bName: "Add Order", onTap: () {},bWidth: 50,),
-                ],
-              )
-
             ],
-          )
+          ),
         ],
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all(12),
+        child: Row(
+          spacing: 20,
+          children: [
+           Expanded(child: CustomButtom(title: "Add Order", onTap: () {},isEmptyBG: true,)),
+           Expanded(child: CustomButtom(title: "Buy Now", onTap: () {},)),
+          ],
+        ),
       ),
     );
   }
