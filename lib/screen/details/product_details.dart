@@ -1,5 +1,7 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce/custom_Widget/custom_cart.dart';
 import 'package:flutter/material.dart';
+
 class ProductDetails extends StatefulWidget {
   const ProductDetails({super.key});
 
@@ -11,10 +13,55 @@ class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          CustomCart(),
-          SizedBox(width: 10,)
+      appBar: AppBar(actions: [CustomCart(), SizedBox(width: 10)]),
+      body: Column(
+        children: [
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 240.0,
+              autoPlay: true,
+              viewportFraction: .9,
+              autoPlayInterval: Duration(seconds: 2),
+            ),
+            items: [1, 2, 3, 4, 5].map((i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    child: Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.network(
+                            "https://www.adorama.com/alc/wp-content/uploads/2021/04/neil-mark-thomas-SmFBUCgcTn0-unsplash.jpg",
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Positioned(
+                          left: 15,
+                          top: 10,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue,
+                              foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Text("-40%"),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            }).toList(),
+          ),
         ],
       ),
     );
