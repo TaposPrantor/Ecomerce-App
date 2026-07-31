@@ -6,16 +6,16 @@ class CustomImage extends StatelessWidget {
     super.key, required this.imgUrl, this.imgH, this.imgW,
   });
   final String imgUrl;
-  final int? imgH;
-  final int? imgW;
+  final double? imgH;
+  final double? imgW;
 
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        height: 75,
-        width: 75,
+        height: imgH ?? 75,
+        width: imgW ?? 75,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
             image: DecorationImage(
