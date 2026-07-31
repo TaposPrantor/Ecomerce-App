@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce/custom_Widget/custom_cart.dart';
+import 'package:ecommerce/custom_Widget/text.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -18,7 +19,7 @@ class _ProductDetailsState extends State<ProductDetails> {
         children: [
           CarouselSlider(
             options: CarouselOptions(
-              height: 240.0,
+              height: 250.0,
               autoPlay: true,
               viewportFraction: .9,
               autoPlayInterval: Duration(seconds: 2),
@@ -26,37 +27,31 @@ class _ProductDetailsState extends State<ProductDetails> {
             items: [1, 2, 3, 4, 5].map((i) {
               return Builder(
                 builder: (BuildContext context) {
-                  return Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    child: Stack(
-                      children: [
-                        ClipRRect(
+                  return Stack(
+                    children: [
+                      Container(
+                        alignment: Alignment.center,
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: BoxDecoration(
+                          color: Colors.amber,
                           borderRadius: BorderRadius.circular(10),
-                          child: Image.network(
-                            "https://www.adorama.com/alc/wp-content/uploads/2021/04/neil-mark-thomas-SmFBUCgcTn0-unsplash.jpg",
-                            width: double.infinity,
-                            height: double.infinity,
+                          image: DecorationImage(
                             fit: BoxFit.cover,
-                          ),
+                              image: NetworkImage(
+                                "https://static.vecteezy.com/system/resources/thumbnails/066/223/245/small/professional-digital-camera-capturing-stunning-nature-shots-on-a-tripod-photo.jpg",
+                              )
+                          )
                         ),
-                        Positioned(
-                          left: 15,
-                          top: 10,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
-                              foregroundColor: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            child: Text("-40%"),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                      Card(
+                        color: Colors.deepOrange,
+                        child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                            child: CustomText(text: "40% OFF")
+                        )
+                      )
+                    ],
                   );
                 },
               );
