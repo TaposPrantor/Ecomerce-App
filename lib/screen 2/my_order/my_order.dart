@@ -33,8 +33,9 @@ class _MyOrderState extends State<MyOrder> {
         ),
         body: Column(
           children: [
-            ProductOrderCard(),
-            ProductOrderCard2(orderId: '#AB73H34',
+            ProductOrderCard(), //use_custom widget
+            ProductOrderCard2(
+              orderId: '#AB73H34',
               orderDate: '03 Aug 2026',
               status: 'Shipped',
               totalItems: 2,
