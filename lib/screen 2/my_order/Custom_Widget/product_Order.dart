@@ -9,6 +9,7 @@ class ProductOrderCard2 extends StatelessWidget {
   final String orderId;
   final String orderDate;
   final String status;
+  final Color statusColor;
   final int totalItems;
   final String totalPrice;
   final String paymentMethod;
@@ -21,6 +22,7 @@ class ProductOrderCard2 extends StatelessWidget {
     required this.orderId,
     required this.orderDate,
     required this.status,
+    required this.statusColor,
     required this.totalItems,
     required this.totalPrice,
     required this.paymentMethod,
@@ -64,7 +66,7 @@ class ProductOrderCard2 extends StatelessWidget {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.yellow,
+                      color: statusColor,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: CustomText(

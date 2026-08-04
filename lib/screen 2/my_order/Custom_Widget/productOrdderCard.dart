@@ -68,15 +68,15 @@ class ProductOrderCard extends StatelessWidget {
               ),
               Row(
                 children: [
-                  ...imgUrls.take(3).map(
+                  ...imgUrls.take(4).map(
                       (url) => Padding(
                         padding: EdgeInsets.only(right: 5),
                         child: CustomImage(imgUrl: url),
                       )
                   ),
-                  if(imgUrls.length > 3)
+                  if(imgUrls.length > 4)
                     CustomAddTextCard(
-                      text: "+${imgUrls.length - 2}",
+                      text: "+${imgUrls.length - 4}",
                     ),
                 ],
               ),
