@@ -33,7 +33,14 @@ class _MyOrderState extends State<MyOrder> {
         ),
         body: Column(
           children: [
-            ProductOrderCard(), //use_custom widget
+            ProductOrderCard(
+              imgUrls: [
+                "https://m.media-amazon.com/images/I/71rqFhXj4PL._AC_UY1000_.jpg",
+                "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",
+                "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",
+                "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",
+              ],
+            ), //use_custom widget
             ProductOrderCard2(
               orderId: '#AB73H34',
               orderDate: '03 Aug 2026',
@@ -42,7 +49,7 @@ class _MyOrderState extends State<MyOrder> {
               totalPrice: '৳2,399',
               paymentMethod: 'Nagad',
               imageUrls: [
-                "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",
+                "https://m.media-amazon.com/images/I/71rqFhXj4PL._AC_UY1000_.jpg",
                 "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",
                 "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",
                 "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",

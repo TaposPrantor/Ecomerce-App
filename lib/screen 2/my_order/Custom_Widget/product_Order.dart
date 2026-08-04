@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 import '../../../custom_Widget/CustomImage.dart';
 import '../../../custom_Widget/text.dart';
 import '../../../utilities/colors.dart';

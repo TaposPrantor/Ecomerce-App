@@ -7,8 +7,10 @@ import 'CustomTextAdd.dart';
 
 class ProductOrderCard extends StatelessWidget {
   const ProductOrderCard({
-    super.key,
+    super.key, required this.imgUrls,
   });
+
+  final List<String> imgUrls;
 
   @override
   Widget build(BuildContext context) {
@@ -66,11 +68,16 @@ class ProductOrderCard extends StatelessWidget {
               ),
               Row(
                 children: [
-                  CustomImage(imgUrl: "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75"),
-                  CustomImage(imgUrl: "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75"),
-                  CustomImage(imgUrl: "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75"),
-                  CustomImage(imgUrl: "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75"),
-                  CustomAddTextCard(text: '+2',)
+                  ...imgUrls.take(4).map(
+                      (url) => Padding(
+                        padding: EdgeInsets.only(right: 5),
+                        child: CustomImage(imgUrl: url),
+                      )
+                  ),
+                  if(imgUrls.length > 4)
+                    CustomAddTextCard(
+                      text: "+${imgUrls.length - 4}",
+                    ),
                 ],
               ),
               Row
