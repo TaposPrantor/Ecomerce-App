@@ -36,9 +36,10 @@ class _MyOrderState extends State<MyOrder> {
             ProductOrderCard(
               imgUrls: [
                 "https://m.media-amazon.com/images/I/71rqFhXj4PL._AC_UY1000_.jpg",
-                "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",
-                "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",
-                "https://motionview.com.bd/_next/image?url=https%3A%2F%2Fmotionview.s3.amazonaws.com%2Fimages%2Fproducts%2Fprofile%2F177687341187.webp&w=3840&q=75",
+                "https://s.alicdn.com/@sc04/kf/Hcd0128a55fd14eda8d0eec457ebadaefv.jpg_300x300.jpg",
+                "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
+                "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
+                "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
               ],
             ), //use_custom widget
             ProductOrderCard2(
