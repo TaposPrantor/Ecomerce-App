@@ -45,6 +45,52 @@ class _AllProductState extends State<AllProduct> {
           ],
         ),
       ),
+      bottomNavigationBar: Container(
+        height: 45,
+        decoration: BoxDecoration(
+          //color: Colors.orange.shade50
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.home),
+                Text("Home", style: TextStyle(fontSize: 12))
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.grid_view),
+                Text("Category", style: TextStyle(fontSize: 12))
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.search),
+                Text("Search",  style: TextStyle(fontSize: 12))
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.article),
+                Text("Order",  style: TextStyle(fontSize: 12))
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.person),
+                Text("Account", style: TextStyle(fontSize: 12))
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
