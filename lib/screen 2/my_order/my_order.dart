@@ -35,7 +35,7 @@ class _MyOrderState extends State<MyOrder> {
           children: [
             ProductOrderCard(
               orderId: '#2B9NF45K',
-              orderDate: '29 July 2026',
+              orderDate: '05 August 2026',
               status: 'Processing',
               statusColor: Colors.orange.shade100,
               textColor: Colors.orange,
@@ -52,7 +52,7 @@ class _MyOrderState extends State<MyOrder> {
             ), //use_custom widget
             ProductOrderCard(
               orderId: '#2B9NF45K',
-              orderDate: '29 July 2026',
+              orderDate: '23 July 2026',
               status: 'Shipped',
               statusColor: Colors.green.shade100,
               textColor: Colors.green,
@@ -67,7 +67,7 @@ class _MyOrderState extends State<MyOrder> {
             ),
             ProductOrderCard(
               orderId: '#2B9NF45K',
-              orderDate: '29 July 2026',
+              orderDate: '10 July 2026',
               status: 'Processing',
               statusColor: Colors.green.shade100,
               textColor: Colors.green,
@@ -85,17 +85,13 @@ class _MyOrderState extends State<MyOrder> {
             ProductOrderCard(
               orderId: '#2B9NF45K',
               orderDate: '29 July 2026',
-              status: 'Processing',
-              statusColor: Colors.orange.shade100,
-              textColor: Colors.orange,
+              status: 'Cancelled',
+              statusColor: Colors.red.shade100,
+              textColor: Colors.red,
               totalItems: '2',
               totalPrice: '3,590',
               paymentMethod: 'bKash',
               imgUrls: [
-                "https://m.media-amazon.com/images/I/71rqFhXj4PL._AC_UY1000_.jpg",
-                "https://s.alicdn.com/@sc04/kf/Hcd0128a55fd14eda8d0eec457ebadaefv.jpg_300x300.jpg",
-                "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
-                "https://p.globalsources.com/IMAGES/PDT/B1217498440/Amoled-calling-smartwatch.png?ver=6034212300",
                 "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
               ],
             ),

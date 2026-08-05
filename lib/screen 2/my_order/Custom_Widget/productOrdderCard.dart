@@ -114,13 +114,13 @@ class ProductOrderCard extends StatelessWidget {
                         height: 20,
                         width: 75,
                         decoration: BoxDecoration(
-                            color: Colors.yellow,
+                            color: Colors.yellow.shade100,
                             borderRadius: BorderRadius.circular(12)
                         ),
                         alignment: Alignment.center,
                         child: InkWell(
                             onTap: onViewDetails,
-                            child: CustomText(text: "View Details", color: AppColor.primaryColor,fWeight: FontWeight.w500,)
+                            child: CustomText(text: "View Details", color: Colors.orange,fWeight: FontWeight.w500,)
                         ),
                       )
                     ],
