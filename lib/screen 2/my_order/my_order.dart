@@ -34,6 +34,14 @@ class _MyOrderState extends State<MyOrder> {
         body: ListView(
           children: [
             ProductOrderCard(
+              orderId: '#2B9NF45K',
+              orderDate: '29 July 2026',
+              status: 'Processing',
+              statusColor: Colors.orange.shade100,
+              textColor: Colors.orange,
+              totalItems: '2',
+              totalPrice: '3,590',
+              paymentMethod: 'bKash',
               imgUrls: [
                 "https://m.media-amazon.com/images/I/71rqFhXj4PL._AC_UY1000_.jpg",
                 "https://s.alicdn.com/@sc04/kf/Hcd0128a55fd14eda8d0eec457ebadaefv.jpg_300x300.jpg",
@@ -42,61 +50,53 @@ class _MyOrderState extends State<MyOrder> {
                 "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
               ],
             ), //use_custom widget
-            ProductOrderCard2(
-              orderId: '#AB73H34',
-              orderDate: '03 Aug 2026',
+            ProductOrderCard(
+              orderId: '#2B9NF45K',
+              orderDate: '29 July 2026',
               status: 'Shipped',
-              statusColor: Colors.green,
-              totalItems: 2,
-              totalPrice: '৳2,399',
+              statusColor: Colors.green.shade100,
+              textColor: Colors.green,
+              totalItems: '',
+              totalPrice: '3,590',
               paymentMethod: 'Nagad',
-              imageUrls: [
-                "https://m.media-amazon.com/images/I/71rqFhXj4PL._AC_UY1000_.jpg",
+              imgUrls: [
                 "https://s.alicdn.com/@sc04/kf/Hcd0128a55fd14eda8d0eec457ebadaefv.jpg_300x300.jpg",
-                "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
                 "https://p.globalsources.com/IMAGES/PDT/B1217498440/Amoled-calling-smartwatch.png?ver=6034212300",
-                "https://s.alicdn.com/@sc04/kf/Hcd0128a55fd14eda8d0eec457ebadaefv.jpg_300x300.jpg",
                 "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
-                "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
-
               ],
             ),
-            ProductOrderCard2(
-              orderId: '#AB73H34',
-              orderDate: '03 Aug 2026',
-              status: 'Deliverd',
-              statusColor: Colors.green,
-              totalItems: 2,
-              totalPrice: '৳2,399',
-              paymentMethod: 'Nagad',
-              imageUrls: [
+            ProductOrderCard(
+              orderId: '#2B9NF45K',
+              orderDate: '29 July 2026',
+              status: 'Processing',
+              statusColor: Colors.green.shade100,
+              textColor: Colors.green,
+              totalItems: '2',
+              totalPrice: '3,590',
+              paymentMethod: 'bKash',
+              imgUrls: [
                 "https://m.media-amazon.com/images/I/71rqFhXj4PL._AC_UY1000_.jpg",
                 "https://s.alicdn.com/@sc04/kf/Hcd0128a55fd14eda8d0eec457ebadaefv.jpg_300x300.jpg",
                 "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
                 "https://p.globalsources.com/IMAGES/PDT/B1217498440/Amoled-calling-smartwatch.png?ver=6034212300",
-                "https://s.alicdn.com/@sc04/kf/Hcd0128a55fd14eda8d0eec457ebadaefv.jpg_300x300.jpg",
                 "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
-                "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
-
               ],
             ),
-            ProductOrderCard2(
-              orderId: '#AB73H34',
-              orderDate: '03 Aug 2026',
-              status: 'Cancelled',
-              statusColor: Colors.red.shade100,
-              totalItems: 2,
-              totalPrice: '৳2,399',
-              paymentMethod: 'Nagad',
-              imageUrls: [
+            ProductOrderCard(
+              orderId: '#2B9NF45K',
+              orderDate: '29 July 2026',
+              status: 'Processing',
+              statusColor: Colors.orange.shade100,
+              textColor: Colors.orange,
+              totalItems: '2',
+              totalPrice: '3,590',
+              paymentMethod: 'bKash',
+              imgUrls: [
                 "https://m.media-amazon.com/images/I/71rqFhXj4PL._AC_UY1000_.jpg",
                 "https://s.alicdn.com/@sc04/kf/Hcd0128a55fd14eda8d0eec457ebadaefv.jpg_300x300.jpg",
                 "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
                 "https://p.globalsources.com/IMAGES/PDT/B1217498440/Amoled-calling-smartwatch.png?ver=6034212300",
-                "https://s.alicdn.com/@sc04/kf/Hcd0128a55fd14eda8d0eec457ebadaefv.jpg_300x300.jpg",
                 "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
-                "https://static-01.daraz.com.bd/p/c22832f6c5f082dd5b61d3d822e65568.jpg",
-
               ],
             ),
           ],

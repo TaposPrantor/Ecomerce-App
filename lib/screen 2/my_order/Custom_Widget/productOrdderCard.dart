@@ -7,17 +7,28 @@ import 'CustomTextAdd.dart';
 
 class ProductOrderCard extends StatelessWidget {
   const ProductOrderCard({
-    super.key, required this.imgUrls,
+    super.key, required this.imgUrls, required this.orderId, required this.orderDate, required this.status, required this.statusColor, required this.totalItems, required this.totalPrice, required this.paymentMethod, this.onViewDetails, this.onStatusTap, required this.textColor,
   });
 
+
+  final String orderId;
+  final String orderDate;
+  final String status;
+  final Color statusColor;
+  final Color textColor;
+  final String totalItems;
+  final String totalPrice;
   final List<String> imgUrls;
+  final String paymentMethod;
+  final VoidCallback? onViewDetails;
+  final VoidCallback? onStatusTap;
 
   @override
   Widget build(BuildContext context) {
     return Card(
         elevation: 5,
         child:Container(
-          height: 250,
+          padding: const EdgeInsets.all(12),
           width: double.infinity,
           child: Column(
             spacing: 5,
@@ -30,31 +41,35 @@ class ProductOrderCard extends StatelessWidget {
                     spacing: 10,
                     children: [
                       Text("Order Id"),
-                      CustomText(text: "#47BG4AY2", fWeight: FontWeight.bold,)
+                      CustomText(text: orderId, fWeight: FontWeight.bold,)
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("31 July 2026"),
+                      Text(orderDate),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Container(
-                        height: 20,
-                        width: 75,
-                        decoration: BoxDecoration(
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(12)
+                      InkWell(
+                        onTap: onStatusTap,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 4,
+                          ),
+                          decoration: BoxDecoration(
+                            color: statusColor,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: CustomText(
+                            text: status,
+                            color: textColor,
+                          ),
                         ),
-                        alignment: Alignment.center,
-                        child: InkWell(
-                            onTap: () {},
-                            child: CustomText(text: "Processing", color: AppColor.primaryColor,fWeight: FontWeight.w500,)
-                        ),
-                      )
+                      ),
                     ],
                   ),
                 ],
@@ -62,8 +77,8 @@ class ProductOrderCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: "3 Items"),
-                  CustomText(text: "৳32,599", fWeight: FontWeight.bold,fSize: 16,)
+                  CustomText(text: "$totalItems Items"),
+                  CustomText(text: "৳$totalPrice", fWeight: FontWeight.bold,fSize: 16,)
                 ],
               ),
               Row(
@@ -89,7 +104,7 @@ class ProductOrderCard extends StatelessWidget {
                     spacing: 10,
                     children: [
                       Text("Payment Method"),
-                      CustomText(text: "bKash", fWeight: FontWeight.bold,)
+                      CustomText(text: paymentMethod, fWeight: FontWeight.bold,)
                     ],
                   ),
                   Column(
@@ -104,7 +119,7 @@ class ProductOrderCard extends StatelessWidget {
                         ),
                         alignment: Alignment.center,
                         child: InkWell(
-                            onTap: () {},
+                            onTap: onViewDetails,
                             child: CustomText(text: "View Details", color: AppColor.primaryColor,fWeight: FontWeight.w500,)
                         ),
                       )
