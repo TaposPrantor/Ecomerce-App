@@ -10,6 +10,8 @@ class ProductImageSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int counter = 1;
+    
     return CarouselSlider(
       options: CarouselOptions(
         height: 250.0,
@@ -22,20 +24,29 @@ class ProductImageSlider extends StatelessWidget {
           builder: (BuildContext context) {
             return Stack(
               children: [
-                Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            "https://static.vecteezy.com/system/resources/thumbnails/066/223/245/small/professional-digital-camera-capturing-stunning-nature-shots-on-a-tripod-photo.jpg",
+                Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.symmetric(horizontal: 5.0),
+                      decoration: BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                "https://static.vecteezy.com/system/resources/thumbnails/066/223/245/small/professional-digital-camera-capturing-stunning-nature-shots-on-a-tripod-photo.jpg",
+                              )
                           )
-                      )
-                  ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 5,
+                        child: CustomText(text: "$i/5")
+                    )
+                  ],
                 ),
                 Card(
                     color: Colors.deepOrange,

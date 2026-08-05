@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../custom_Widget/CustomImage.dart';
 import '../../../custom_Widget/text.dart';
-import '../../../utilities/colors.dart';
 import 'CustomTextAdd.dart';
 
 class ProductOrderCard extends StatelessWidget {
