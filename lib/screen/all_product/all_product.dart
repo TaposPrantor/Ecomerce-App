@@ -5,6 +5,8 @@ import 'package:ecommerce/screen/all_product/widget_ap/productCardWidget.dart';
 import 'package:ecommerce/utilities/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../custom_Widget/bottom_Widget.dart';
+
 class AllProduct extends StatefulWidget {
   const AllProduct({super.key});
 
@@ -46,51 +48,20 @@ class _AllProductState extends State<AllProduct> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 45,
-        decoration: BoxDecoration(
-          //color: Colors.orange.shade50
-        ),
+        height: MediaQuery.of(context).size.height*0.08,
+        padding: EdgeInsets.symmetric(vertical: 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.home),
-                Text("Home", style: TextStyle(fontSize: 12))
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.grid_view),
-                Text("Category", style: TextStyle(fontSize: 12))
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.search),
-                Text("Search",  style: TextStyle(fontSize: 12))
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.article),
-                Text("Order",  style: TextStyle(fontSize: 12))
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.person),
-                Text("Account", style: TextStyle(fontSize: 12))
-              ],
-            ),
+            BottomWidget(icon: (Icons.home), title: 'Home', ),
+            BottomWidget(icon: (Icons.grid_view), title: 'Category', ),
+            BottomWidget(icon: (Icons.search), title: 'Search', ),
+            BottomWidget(icon: (Icons.article), title: 'Order',),
+            BottomWidget(icon: (Icons.person), title: 'Account',),
           ],
         ),
       ),
     );
   }
 }
+
