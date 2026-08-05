@@ -15,6 +15,7 @@ class AllProduct extends StatefulWidget {
 }
 
 class _AllProductState extends State<AllProduct> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,17 +48,63 @@ class _AllProductState extends State<AllProduct> {
           ],
         ),
       ),
+
       bottomNavigationBar: Container(
         height: MediaQuery.of(context).size.height*0.08,
         padding: EdgeInsets.symmetric(vertical: 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            BottomWidget(icon: (Icons.home), title: 'Home', ),
-            BottomWidget(icon: (Icons.grid_view), title: 'Category', ),
-            BottomWidget(icon: (Icons.search), title: 'Search', ),
-            BottomWidget(icon: (Icons.article), title: 'Order',),
-            BottomWidget(icon: (Icons.person), title: 'Account',),
+            BottomWidget(
+              icon: (Icons.home),
+              title: 'Home',
+              isSelected: selectedIndex == 1,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 1;
+                });
+              },
+            ),
+            BottomWidget(
+              icon: (Icons.grid_view),
+              title: 'Category',
+              isSelected: selectedIndex == 0,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 1;
+                });
+              },
+            ),
+            BottomWidget(
+              icon: (Icons.search),
+              title: 'Search',
+              isSelected: selectedIndex == 2,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 2;
+                });
+              },
+            ),
+            BottomWidget(
+              icon: (Icons.article),
+              title: 'Order',
+              isSelected: selectedIndex == 3,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 3;
+                });
+              },
+            ),
+            BottomWidget(
+              icon: (Icons.person),
+              title: 'Account',
+              isSelected: selectedIndex == 4,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 4;
+                });
+              },
+            ),
           ],
         ),
       ),

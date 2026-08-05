@@ -2,12 +2,14 @@ import 'package:ecommerce/custom_Widget/text.dart';
 import 'package:ecommerce/screen/home/widget/category_widget.dart';
 import 'package:ecommerce/screen/home/widget/featured_card.dart';
 import 'package:flutter/material.dart';
+import '../../custom_Widget/bottom_Widget.dart';
 import '../../custom_Widget/custom_cart.dart';
 import '../../custom_Widget/title_heading.dart';
 import '../../custom_Widget/search_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import '../../custom_Widget/slider.dart';
+import '../../screen 2/my_order/my_order.dart';
 import '../../utilities/colors.dart';
 import '../all_product/all_product.dart';
 
@@ -19,6 +21,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,6 +121,71 @@ class _HomeScreenState extends State<HomeScreen> {
             Trending(),
 
             SizedBox(height: 12,),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: MediaQuery.of(context).size.height*0.08,
+        padding: EdgeInsets.symmetric(vertical: 5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            BottomWidget(
+              icon: (Icons.home),
+              title: 'Home',
+              isSelected: selectedIndex == 0,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 0;
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context)=>HomeScreen())
+                  );
+                });
+              },
+            ),
+            BottomWidget(
+              icon: (Icons.grid_view),
+              title: 'Category',
+              isSelected: selectedIndex == 1,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 1;
+                });
+              },
+            ),
+            BottomWidget(
+              icon: (Icons.search),
+              title: 'Search',
+              isSelected: selectedIndex == 2,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 2;
+                });
+              },
+            ),
+            BottomWidget(
+              icon: (Icons.article),
+              title: 'Order',
+              isSelected: selectedIndex == 3,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 3;
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context)=>MyOrder())
+                  );
+                });
+              },
+            ),
+            BottomWidget(
+              icon: (Icons.person),
+              title: 'Account',
+              isSelected: selectedIndex == 4,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 4;
+                });
+              },
+            ),
           ],
         ),
       ),
