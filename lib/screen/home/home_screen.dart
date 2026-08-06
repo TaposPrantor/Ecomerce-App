@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: MediaQuery.of(context).size.height*0.08,
+        height: MediaQuery.of(context).size.height*0.075,
         padding: EdgeInsets.symmetric(vertical: 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

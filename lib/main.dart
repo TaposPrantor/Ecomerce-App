@@ -1,4 +1,5 @@
 
+import 'package:ecommerce/screen%202/My_Account/my_account.dart';
 import 'package:ecommerce/screen%202/my_order/my_order.dart';
 import 'package:ecommerce/screen/all_product/all_product.dart';
 import 'package:ecommerce/screen/details/product_details.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: MyAccount(),
     );
   }
 }
