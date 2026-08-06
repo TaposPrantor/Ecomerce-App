@@ -168,7 +168,43 @@ class _MyAccountState extends State<MyAccount> {
                     ],
                   ),
                 ),
+                Card(
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 7),
+                        child: SizedBox(
+                          height: 25,
+                          width: double.infinity,
+                          child: CustomText(
+                            text: "Account Setting",
+                            fSize: 16,
+                            fWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.person),
+                        title: CustomText(text: "Profile"),
+                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: Icon(Icons.my_location),
+                        title: CustomText(text: "Address"),
+                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: Icon(Icons.payment),
+                        title: CustomText(text: "Payment Method"),
+                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                      ),
 
+                    ],
+                  ),
+                )
               ],
             ),
           ),
