@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../custom_Widget/custom_cart.dart';
 import '../../custom_Widget/text.dart';
+import 'Custom_Widget/MyCartShpping.dart';
 
 class MyCart extends StatefulWidget {
   const MyCart({super.key});
@@ -24,6 +25,12 @@ class _MyCartState extends State<MyCart> {
           SizedBox(width: 10,)
         ],
       ),
+      body: ListView(
+        children: [
+          MyCartShipping()
+        ],
+      ),
     );
   }
 }
+
