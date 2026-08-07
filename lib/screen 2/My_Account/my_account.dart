@@ -201,6 +201,19 @@ class _MyAccountState extends State<MyAccount> {
                         title: CustomText(text: "Payment Method"),
                         trailing: Icon(Icons.arrow_forward_ios, size: 15,),
                       ),
+                      Divider(),
+                      ListTile(
+                        leading: Icon(Icons.lock),
+                        title: CustomText(text: "Change Password"),
+                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: Icon(Icons.notifications),
+                        title: CustomText(text: "Notification"),
+                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                      ),
+
 
                     ],
                   ),
