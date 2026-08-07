@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../custom_Widget/bottom_Widget.dart';
 import '../../custom_Widget/custom_cart.dart';
 import '../../custom_Widget/text.dart';
+import '../../screen/home/home_screen.dart';
+import '../my_order/my_order.dart';
 
 class MyAccount extends StatefulWidget {
   const MyAccount({super.key});
@@ -21,206 +24,293 @@ class _MyAccountState extends State<MyAccount> {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.orange.shade50,
-            title: CustomText(text: "My Orders", fSize: 21, fWeight: FontWeight.bold,),
+            title: CustomText(text: "My Account", fSize: 21, fWeight: FontWeight.bold,),
             actions: [
               Icon(Icons.settings, size: 30,),
               SizedBox(width: 10,)
             ],
           ),
-          body: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              spacing: 5,
-              children: [
-                Container(
-                  height: 150,
-                  width: double.infinity,
-                  padding: EdgeInsets.all(7),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade100,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  child: Row(
-                    spacing: 15,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 60,
-                            backgroundImage: NetworkImage("https://pbs.twimg.com/media/HFiAjgpaoAAyFNy.jpg"),
-                          ),
-                        ],
-                      ),
-                      Expanded(
-                        flex: 4,
-                          child:Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              spacing: 10,
-                              children: [
-                                CustomText(text: "MS Dhoni", fSize: 15, fWeight: FontWeight.bold,),
-                                CustomText(text: "+92 01186324564",fSize: 12, fWeight: FontWeight.bold,),
-                                CustomText(text: "msdhoni01icc@gmail.com", fSize: 10, fWeight: FontWeight.bold,),
-
-                              ],
-                          ),
-                      ),
-                      Expanded(
-                        flex: 1,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Icon(Icons.arrow_forward_ios, size: 35,)
-                            ],
-                          )
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  height: 120,
-                  width: double.infinity,
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
+          body: SafeArea(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: Column(
+                    spacing: 5,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              CustomText(text: "My Order", fWeight: FontWeight.bold, fSize: 18,),
-                            ],
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              InkWell(
-                                onTap: () {},
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 12,
-                                    vertical: 4,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: Colors.orange.shade100,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: CustomText(
-                                    text: "View All",
-                                    color: Colors.deepOrange,
-                                  ),
+                      Container(
+                        height: 150,
+                        width: double.infinity,
+                        padding: EdgeInsets.all(7),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade100,
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Row(
+                          spacing: 15,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                CircleAvatar(
+                                  radius: 60,
+                                  backgroundImage: NetworkImage("https://pbs.twimg.com/media/HFiAjgpaoAAyFNy.jpg"),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 15,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                radius: 20,
-                                child: Icon(Icons.description_outlined),
-                              ),
-                              CustomText(text: "Processing")
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                radius: 20,
-                                child: Icon(Icons.local_shipping_outlined),
-                              ),
-                              CustomText(text: "Shipped")
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                radius: 20,
-                                child: Icon(Icons.check_box),
-                              ),
-                              CustomText(text: "Delivered")
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                radius: 20,
-                                child: Icon(Icons.cancel),
-                              ),
-                              CustomText(text: "Cancelled")
-                            ],
-                          ),
+                              ],
+                            ),
+                            Expanded(
+                              flex: 4,
+                              child:Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                spacing: 10,
+                                children: [
+                                  CustomText(text: "MS Dhoni", fSize: 15, fWeight: FontWeight.bold,),
+                                  CustomText(text: "+92 01186324564",fSize: 12, fWeight: FontWeight.bold,),
+                                  CustomText(text: "msdhoni01icc@gmail.com", fSize: 10, fWeight: FontWeight.bold,),
 
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                Card(
-                  child: ListView(
-                    shrinkWrap: true,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 7),
-                        child: SizedBox(
-                          height: 25,
-                          width: double.infinity,
-                          child: CustomText(
-                            text: "Account Setting",
-                            fSize: 16,
-                            fWeight: FontWeight.bold,
-                          ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                                flex: 1,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Icon(Icons.arrow_forward_ios, size: 35,)
+                                  ],
+                                )
+                            )
+                          ],
                         ),
                       ),
-                      ListTile(
-                        leading: Icon(Icons.person),
-                        title: CustomText(text: "Profile"),
-                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
-                      ),
-                      Divider(),
-                      ListTile(
-                        leading: Icon(Icons.my_location),
-                        title: CustomText(text: "Address"),
-                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
-                      ),
-                      Divider(),
-                      ListTile(
-                        leading: Icon(Icons.payment),
-                        title: CustomText(text: "Payment Method"),
-                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
-                      ),
-                      Divider(),
-                      ListTile(
-                        leading: Icon(Icons.lock),
-                        title: CustomText(text: "Change Password"),
-                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
-                      ),
-                      Divider(),
-                      ListTile(
-                        leading: Icon(Icons.notifications),
-                        title: CustomText(text: "Notification"),
-                        trailing: Icon(Icons.arrow_forward_ios, size: 15,),
-                      ),
+                      Container(
+                        height: 120,
+                        width: double.infinity,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade100,
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    CustomText(text: "My Order", fWeight: FontWeight.bold, fSize: 18,),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 12,
+                                          vertical: 4,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: Colors.orange.shade100,
+                                          borderRadius: BorderRadius.circular(20),
+                                        ),
+                                        child: CustomText(
+                                          text: "View All",
+                                          color: Colors.deepOrange,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 15,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 20,
+                                      child: Icon(Icons.description_outlined),
+                                    ),
+                                    CustomText(text: "Processing")
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 20,
+                                      child: Icon(Icons.local_shipping_outlined),
+                                    ),
+                                    CustomText(text: "Shipped")
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 20,
+                                      child: Icon(Icons.check_box),
+                                    ),
+                                    CustomText(text: "Delivered")
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 20,
+                                      child: Icon(Icons.cancel),
+                                    ),
+                                    CustomText(text: "Cancelled")
+                                  ],
+                                ),
 
-
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      Card(
+                        child: ListView(
+                          shrinkWrap: true,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 7),
+                              child: SizedBox(
+                                height: 25,
+                                width: double.infinity,
+                                child: CustomText(
+                                  text: "Account Setting",
+                                  fSize: 16,
+                                  fWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            ListTile(
+                              leading: Icon(Icons.person),
+                              title: CustomText(text: "Profile"),
+                              trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                            ),
+                            Divider(),
+                            ListTile(
+                              leading: Icon(Icons.my_location),
+                              title: CustomText(text: "Address"),
+                              trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                            ),
+                            Divider(),
+                            ListTile(
+                              leading: Icon(Icons.payment),
+                              title: CustomText(text: "Payment Method"),
+                              trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                            ),
+                            Divider(),
+                            ListTile(
+                              leading: Icon(Icons.lock),
+                              title: CustomText(text: "Change Password"),
+                              trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                            ),
+                            Divider(),
+                            ListTile(
+                              leading: Icon(Icons.notifications),
+                              title: CustomText(text: "Notification"),
+                              trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                            ),
+                            Divider(),
+                            ListTile(
+                              leading: Icon(Icons.help_outline),
+                              title: CustomText(text: "Help Support"),
+                              trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                            ),
+                            Divider(),
+                            ListTile(
+                              leading: Icon(Icons.info_outline),
+                              title: CustomText(text: "About Us"),
+                              trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                            ),
+                            Divider(),
+                            ListTile(
+                              leading: Icon(Icons.logout, color: Colors.deepOrange,),
+                              title: CustomText(text: "Log Out", color: Colors.deepOrange,),
+                              trailing: Icon(Icons.arrow_forward_ios, size: 15,),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
-                )
+                ),
+              )
+          ),
+
+          bottomNavigationBar: Container(
+            height: MediaQuery.of(context).size.height*0.075,
+            padding: EdgeInsets.symmetric(vertical: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                BottomWidget(
+                  icon: (Icons.home),
+                  title: 'Home',
+                  isSelected: selectedIndex == 0,
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = 0;
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (context)=>HomeScreen())
+                      );
+                    });
+                  },
+                ),
+                BottomWidget(
+                  icon: (Icons.grid_view),
+                  title: 'Category',
+                  isSelected: selectedIndex == 1,
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = 1;
+                    });
+                  },
+                ),
+                BottomWidget(
+                  icon: (Icons.search),
+                  title: 'Search',
+                  isSelected: selectedIndex == 2,
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = 2;
+                    });
+                  },
+                ),
+                BottomWidget(
+                  icon: (Icons.article),
+                  title: 'Order',
+                  isSelected: selectedIndex == 3,
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = 3;
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (context)=>MyOrder())
+                      );
+                    });
+                  },
+                ),
+                BottomWidget(
+                  icon: (Icons.person),
+                  title: 'Account',
+                  isSelected: selectedIndex == 4,
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = 4;
+                    });
+                  },
+                ),
               ],
             ),
           ),
+
         )
     );
   }
