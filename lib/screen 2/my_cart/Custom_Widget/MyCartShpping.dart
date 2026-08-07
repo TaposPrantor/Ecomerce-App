@@ -45,18 +45,15 @@ class MyCartShipping extends StatelessWidget {
               SizedBox(width: 20,)
             ],
           ),
-
-
-          const SizedBox(height: 14),
-
+          SizedBox(height: 14),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: LinearProgressIndicator(
-              value: 0.65, // 65%
+              value: 0.7, // 65%
               minHeight: 8,
               backgroundColor: Colors.grey.shade300,
               valueColor:
-              const AlwaysStoppedAnimation<Color>(Colors.green),
+              AlwaysStoppedAnimation<Color>(Colors.green),
             ),
           ),
 
