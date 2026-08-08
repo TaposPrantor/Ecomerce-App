@@ -21,6 +21,69 @@ class _OrderDetailsState extends State<OrderDetails> {
           SizedBox(width: 18,),
         ],
       ),
+
+      body: Column(
+        children: [
+          Card(
+            elevation: 4,
+            child: Container(
+              height: 180,
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  spacing: 10,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomText(text: "Order Id"),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.green.shade50,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: CustomText(
+                              text: "Delivered",
+                              color: Colors.green,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        CustomText(
+                          text: "#SF42HB82PR",
+                          fWeight: FontWeight.bold,fSize: 16,
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        CustomText(text: "Order Date"),
+                        SizedBox(width: 45,),
+                        CustomText(text: "30 June, 2026"),
+                        SizedBox(width: 10,),
+                        CustomText(text: "10:45 am")
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+
+
     );
   }
 }
