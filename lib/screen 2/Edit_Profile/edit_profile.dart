@@ -199,6 +199,29 @@ class _EditProfileState extends State<EditProfile> {
                 ),
               ),
             ),
+            Card(
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 3,
+                  children: [
+                    CustomText(text: "Account Information", fSize: 18, fWeight: FontWeight.bold,),
+                    CustomText(text: "Password", fSize: 10,),
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: "Password",
+                        suffixIcon: Icon(Icons.arrow_right),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
@@ -216,7 +239,7 @@ class _EditProfileState extends State<EditProfile> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomText(
-                          text: "Save Changes",
+                          text: "Continue to Proceed",
                           fWeight: FontWeight.bold,
                           fSize: 14,
                           color: Colors.white,
