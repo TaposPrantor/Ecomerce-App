@@ -28,9 +28,11 @@ class _ForgetScreenState extends State<ForgetScreen> {
             width: double.infinity,
             alignment: Alignment.center,
             child: CircleAvatar(
-              radius: 95,
+              radius: 90,
               //backgroundColor: Colors.deepOrange,
               child: Image.network(
+                height: 95,
+                width: 95,
                 "https://cdn-icons-png.flaticon.com/512/6146/6146586.png",
                 fit: BoxFit.cover,
               ),
