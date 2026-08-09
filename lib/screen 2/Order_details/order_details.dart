@@ -311,7 +311,37 @@ class _OrderDetailsState extends State<OrderDetails> {
                         ),
                       ),
                   ),
-                  Expanded(child: CustomButtom(title: "Buy Now", onTap: () {},)),
+                  Expanded(
+                      child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                            height: 40,
+                            width: 180,
+                            decoration: BoxDecoration(
+                              color: Colors.deepOrange,
+                              border: Border.all(
+                                  color: Colors.deepOrange,
+                                  width: 3),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            alignment: Alignment.center,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.download, color: Colors.white,size: 25,),
+                                SizedBox(width: 15,),
+                                CustomText(
+                                  text: "DownLoad Invoice",
+                                  fWeight: FontWeight.bold,
+                                  fSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            )
+                        ),
+                      ),
+                  ),
+
                 ],
               ),
             ),
