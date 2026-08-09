@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_stepper/easy_stepper.dart';
+import '../../custom_Widget/custom_button.dart';
 import '../../custom_Widget/text.dart';
 import 'Custom_Widget/order_items.dart';
 
@@ -210,7 +211,6 @@ class _OrderDetailsState extends State<OrderDetails> {
                 ],
               ),
             ),
-
             Container(
               padding: EdgeInsets.all(5),
               child: Card(
@@ -276,6 +276,16 @@ class _OrderDetailsState extends State<OrderDetails> {
               ),
             ),
 
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Row(
+                spacing: 20,
+                children: [
+                  Expanded(child: CustomButtom(title: "Add Order", onTap: () {},isEmptyBG: true,)),
+                  Expanded(child: CustomButtom(title: "Buy Now", onTap: () {},)),
+                ],
+              ),
+            ),
           ],
         ),
       ),
