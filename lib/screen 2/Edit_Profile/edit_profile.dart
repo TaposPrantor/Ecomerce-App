@@ -125,7 +125,79 @@ class _EditProfileState extends State<EditProfile> {
                   ],
                 ),
               ),
-            )
+            ),
+            Card(
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 3,
+                  children: [
+                    CustomText(text: "Address", fSize: 18, fWeight: FontWeight.bold,),
+                    CustomText(text: "Full Address", fSize: 10,),
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: "House 17, KhalishPur, Khulna",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomText(text: "City", fSize: 10,),
+                              TextField(
+                                decoration: InputDecoration(
+                                    labelText: "Khulna, Bangladesh",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10)
+                                    )
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomText(text: "Postal Code", fSize: 10,),
+                              TextField(
+                                decoration: InputDecoration(
+                                    labelText: "5210",
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10)
+                                    )
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    CustomText(text: "Country", fSize: 10,),
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: "Bangladesh",
+                        suffixIcon: Icon(Icons.arrow_downward),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+
+
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
