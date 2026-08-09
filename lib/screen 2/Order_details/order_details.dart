@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_stepper/easy_stepper.dart';
 import '../../custom_Widget/custom_button.dart';
 import '../../custom_Widget/text.dart';
+import '../../utilities/colors.dart';
 import 'Custom_Widget/order_items.dart';
 
 class OrderDetails extends StatefulWidget {
@@ -281,7 +282,35 @@ class _OrderDetailsState extends State<OrderDetails> {
               child: Row(
                 spacing: 20,
                 children: [
-                  Expanded(child: CustomButtom(title: "Add Order", onTap: () {},isEmptyBG: true,)),
+                  Expanded(
+                      child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                            height: 40,
+                            width: 180,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: AppColor.primaryColor,
+                                  width: 3),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            alignment: Alignment.center,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.refresh , color: Colors.orange,size: 25,),
+                                SizedBox(width: 15,),
+                                CustomText(
+                                  text: "Re-Order",
+                                  fWeight: FontWeight.bold,
+                                  fSize: 14,
+                                  color: Colors.orange,
+                                ),
+                              ],
+                            )
+                        ),
+                      ),
+                  ),
                   Expanded(child: CustomButtom(title: "Buy Now", onTap: () {},)),
                 ],
               ),
