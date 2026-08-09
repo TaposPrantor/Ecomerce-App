@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../custom_Widget/text.dart';
+import '../../utilities/colors.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -195,6 +196,33 @@ class _EditProfileState extends State<EditProfile> {
 
 
                   ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                    height: 40,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColor.primaryColor, width: 3),
+                      color: AppColor.primaryColor,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomText(
+                          text: "Save Changes",
+                          fWeight: FontWeight.bold,
+                          fSize: 14,
+                          color: Colors.white,
+                        ),
+                      ],
+                    )
                 ),
               ),
             ),
