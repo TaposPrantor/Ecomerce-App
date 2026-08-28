@@ -58,13 +58,7 @@ class _AllProductState extends State<AllProduct> {
                     childAspectRatio: .95
                   ),
                   itemBuilder: (context, i)=>ProductCardWidget(
-                    id: productData[i]["id"],
-                    name: productData[i]["title"],
-                    regP: productData[i]["reg_price"],
-                    disP: productData[i]["dis_price"],
-                    rating: productData[i]["rating"],
-                    reviews: productData[i]["reviews"],
-                    discount: productData[i]["dis_percentage"],
+                    pData: productData[i],
                   )
               ),
             ),
