@@ -1,5 +1,5 @@
+import 'package:ecommerce/model/product_model.dart';
 import 'package:flutter/material.dart';
-
 import '../../../custom_Widget/text.dart';
 import '../../../database/product.dart';
 import '../../../utilities/colors.dart';
@@ -7,7 +7,7 @@ import '../../../utilities/colors.dart';
 class ProductCardWidget extends StatelessWidget {
   const ProductCardWidget({super.key, required this.pData,});
 
-  final dynamic pData;
+  final ProductModel pData;
 
   @override
   Widget build(BuildContext context) {
@@ -42,36 +42,37 @@ class ProductCardWidget extends StatelessWidget {
           ),
           Column(
             children: [
-              CustomText(text: pData['title']),
+              CustomText(text: pData.title),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomText(
-                    text: "৳ ${pData['dis_price']}",
+                    text: "৳ ${pData.dis_price}",
                     fWeight: FontWeight.bold,
                     fSize: 14,
                   ),
                   CustomText(
-                    text: "৳ ${pData['reg_price']}",
+                    text: "৳ ${pData.reg_price}",
                     fWeight: FontWeight.bold,
                     tDeco: TextDecoration.lineThrough,
                   ),
                   CustomText(
-                    text: "${pData['dis_percentage']}%",
+                    text: "20%",
                     fWeight: FontWeight.bold,
                     fSize: 14,
                     color: AppColor.primaryColor,
                   ),
                 ],
               ),
+
             ],
           ),
           Row(
             spacing: 19,
             children: [
               Icon(Icons.star, color: Colors.deepOrange, size: 18),
-              CustomText(text: "${pData['rating']}", color: AppColor.primaryColor, fSize: 16),
-              CustomText(text: "( ${pData['reviews']} )", color: Colors.black38, fSize: 16),
+              CustomText(text: "4.5", color: AppColor.primaryColor, fSize: 16),
+              CustomText(text: "( 255 )", color: Colors.black38, fSize: 16),
             ],
           ),
         ],

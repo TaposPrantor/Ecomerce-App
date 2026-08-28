@@ -1,5 +1,6 @@
 import 'package:ecommerce/custom_Widget/custom_cart.dart';
 import 'package:ecommerce/custom_Widget/text.dart';
+import 'package:ecommerce/model/product_model.dart';
 import 'package:ecommerce/screen/all_product/widget_ap/filter_section.dart';
 import 'package:ecommerce/screen/all_product/widget_ap/productCardWidget.dart';
 import 'package:ecommerce/utilities/colors.dart';
@@ -17,7 +18,7 @@ class AllProduct extends StatefulWidget {
 
 class _AllProductState extends State<AllProduct> {
   int selectedIndex = 0;
-  List productData = [];
+  List<ProductModel> productData = [];
 
   getProduct(){
     productData.clear();
@@ -35,7 +36,7 @@ class _AllProductState extends State<AllProduct> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: CustomText(text: "All Products (${productData.length})", fWeight: FontWeight.bold,fSize: 18,),
+        title: CustomText(text: "All Products", fWeight: FontWeight.bold,fSize: 18,),
         actions: [
           Icon(Icons.search,),
           SizedBox(width: 12,),
