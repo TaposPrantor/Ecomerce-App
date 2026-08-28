@@ -44,7 +44,8 @@ class ProductImageSlider extends StatelessWidget {
                     ),
                     Positioned(
                       bottom: 5,
-                        child: CustomText(text: "$i/5")
+
+                        child: CustomText(text: "$i/5") //ChatGPT Wrong Ans
                     )
                   ],
                 ),
