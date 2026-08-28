@@ -4,26 +4,16 @@ import '../../../custom_Widget/text.dart';
 import '../../../database/product.dart';
 import '../../../utilities/colors.dart';
 
-class ProductCardWidget extends StatefulWidget {
-  const ProductCardWidget({super.key});
+class ProductCardWidget extends StatelessWidget {
+  const ProductCardWidget({super.key, required this.id, required this.name, required this.regP, required this.disP, required this.rating, required this.reviews, required this.discount});
 
-  @override
-  State<ProductCardWidget> createState() => _ProductCardWidgetState();
-}
-
-class _ProductCardWidgetState extends State<ProductCardWidget> {
-  List productData = [];
-
-  getProduct(){
-    productData.clear();
-    productData.addAll(ProductData.pd);
-  }
-
-  @override
-  void initState(){
-    getProduct();
-    super.initState();
-  }
+  final int id;
+  final String name;
+  final double regP;
+  final double disP;
+  final double rating;
+  final int reviews;
+  final int discount;
 
   @override
   Widget build(BuildContext context) {
@@ -58,22 +48,22 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
           ),
           Column(
             children: [
-              CustomText(text: "Apple Airpod v2.0 Update with 1 Year Warranty"),
+              CustomText(text: name),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomText(
-                    text: "৳1199",
+                    text: "৳ $disP",
                     fWeight: FontWeight.bold,
                     fSize: 14,
                   ),
                   CustomText(
-                    text: "৳1599",
+                    text: "৳ $regP",
                     fWeight: FontWeight.bold,
                     tDeco: TextDecoration.lineThrough,
                   ),
                   CustomText(
-                    text: "25%",
+                    text: "$discount%",
                     fWeight: FontWeight.bold,
                     fSize: 14,
                     color: AppColor.primaryColor,
@@ -86,8 +76,8 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
             spacing: 19,
             children: [
               Icon(Icons.star, color: Colors.deepOrange, size: 18),
-              CustomText(text: "4.6", color: AppColor.primaryColor, fSize: 16),
-              CustomText(text: "(256)", color: Colors.black38, fSize: 16),
+              CustomText(text: "$rating", color: AppColor.primaryColor, fSize: 16),
+              CustomText(text: "$reviews", color: Colors.black38, fSize: 16),
             ],
           ),
         ],

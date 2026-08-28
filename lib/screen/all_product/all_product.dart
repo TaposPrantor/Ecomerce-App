@@ -6,6 +6,7 @@ import 'package:ecommerce/utilities/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../custom_Widget/bottom_Widget.dart';
+import '../../database/product.dart';
 
 class AllProduct extends StatefulWidget {
   const AllProduct({super.key});
@@ -16,11 +17,25 @@ class AllProduct extends StatefulWidget {
 
 class _AllProductState extends State<AllProduct> {
   int selectedIndex = 0;
+  List productData = [];
+
+  getProduct(){
+    productData.clear();
+    productData.addAll(ProductData.pd);
+  }
+
+  @override
+  void initState(){
+    getProduct();
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: CustomText(text: "All Products", fWeight: FontWeight.bold,fSize: 18,),
+        title: CustomText(text: "All Products (${productData.length})", fWeight: FontWeight.bold,fSize: 18,),
         actions: [
           Icon(Icons.search,),
           SizedBox(width: 12,),
@@ -37,12 +52,20 @@ class _AllProductState extends State<AllProduct> {
             Expanded(
               child: GridView.builder(
                 shrinkWrap: true,
-                itemCount: 20,
+                itemCount: productData.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                     childAspectRatio: .95
                   ),
-                  itemBuilder: (context, i)=>ProductCardWidget()
+                  itemBuilder: (context, i)=>ProductCardWidget(
+                    id: productData[i]["id"],
+                    name: productData[i]["title"],
+                    regP: productData[i]["reg_price"],
+                    disP: productData[i]["dis_price"],
+                    rating: productData[i]["rating"],
+                    reviews: productData[i]["reviews"],
+                    discount: productData[i]["dis_percentage"],
+                  )
               ),
             ),
           ],
