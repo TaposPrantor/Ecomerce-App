@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../custom_Widget/text.dart';
+import '../../../database/product.dart';
 import '../../../utilities/colors.dart';
 
 class ProductCardWidget extends StatefulWidget {
@@ -12,6 +13,17 @@ class ProductCardWidget extends StatefulWidget {
 
 class _ProductCardWidgetState extends State<ProductCardWidget> {
   List productData = [];
+
+  getProduct(){
+    productData.clear();
+    productData.addAll(ProductData.pd);
+  }
+
+  @override
+  void initState(){
+    getProduct();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
