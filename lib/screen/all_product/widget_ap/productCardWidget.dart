@@ -3,8 +3,15 @@ import 'package:flutter/material.dart';
 import '../../../custom_Widget/text.dart';
 import '../../../utilities/colors.dart';
 
-class ProductCardWidget extends StatelessWidget {
+class ProductCardWidget extends StatefulWidget {
   const ProductCardWidget({super.key});
+
+  @override
+  State<ProductCardWidget> createState() => _ProductCardWidgetState();
+}
+
+class _ProductCardWidgetState extends State<ProductCardWidget> {
+  List productData = [];
 
   @override
   Widget build(BuildContext context) {
